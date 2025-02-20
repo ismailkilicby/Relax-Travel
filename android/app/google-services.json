@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "38131861631",
+    "project_id": "neyimeshur-3a1ac",
+    "storage_bucket": "neyimeshur-3a1ac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38131861631:android:a1b02eae24980fc2e5174a",
+        "android_client_info": {
+          "package_name": "com.company.neyimeshur"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg6IgazV62oJ102-NqWNVk5r6h484rl_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38131861631:android:32d8aa13727266c3e5174a",
+        "android_client_info": {
+          "package_name": "com.example.neyimeshur"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg6IgazV62oJ102-NqWNVk5r6h484rl_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
