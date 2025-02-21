@@ -22,12 +22,11 @@ class _MapScreenState extends State<HaritaEkrani> {
       appBar: AppBar(title: Text("Konum Seç")),
       body: FlutterMap(
         options: MapOptions(
-          initialCenter: LatLng(37.7648, 30.5566), // Isparta, Türkiye
+          initialCenter: LatLng(37.7648, 30.5566),
           initialZoom: 13.0,
           onTap: _onTap,
           interactionOptions: const InteractionOptions(
-            flags: InteractiveFlag.all &
-                ~InteractiveFlag.rotate, // Dönmeyi engelle
+            flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
           ),
         ),
         children: [

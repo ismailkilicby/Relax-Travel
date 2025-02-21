@@ -29,4 +29,6 @@ class Users {
         email = map['email'],
         phoneNumber = map['phoneNumber'],
         password = map['password'];
+
+  static getAllUsers() {}
 }

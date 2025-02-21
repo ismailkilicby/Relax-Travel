@@ -9,8 +9,8 @@ final _telefoncont = TextEditingController();
 Users user = new Users(
     namesurname: 'İsmail Kilic',
     phoneNumber: '05554554545',
-    email: 'ismail',
-    password: '1234');
+    email: 'ismailx@gmail.com',
+    password: 'ismailx');
 
 class KayitSayfasi extends StatelessWidget {
   @override

@@ -5,8 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:neyimeshur/sehirbos.dart';
 import '../class/rota_bloc.dart';
-import '../class/rota_event.dart';
-import 'class/rota_state.dart';
 import '../models/sehir_model.dart';
 import '../models/rota_model.dart';
 

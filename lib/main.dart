@@ -5,9 +5,11 @@ import 'package:neyimeshur/giris.dart';
 import 'package:neyimeshur/kayit.dart';
 import 'package:neyimeshur/rota.dart';
 import 'package:neyimeshur/sifremiunuttum.dart';
+import 'package:neyimeshur/gezinme.dart';
 import 'package:neyimeshur/class/rota_bloc.dart';
 import 'firebase_options.dart';
 
+//4800773014923
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -18,6 +20,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -29,90 +32,73 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Neyi Meşhur',
         debugShowCheckedModeBanner: false,
-        home: const MyHomePage(title: 'Neyi Meşhur'),
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => MyHomePage(),
+          '/kayit': (context) => KayitSayfasi(),
+          '/giris': (context) => GirisSayfasi(),
+          '/sifremi-unuttum': (context) => SifremiUnuttum(),
+          '/rota': (context) => Rotam(),
+          '/ana': (context) =>
+              Gezinme(isBackButtonClick: false, autoSelectedIndex: 0),
+        },
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
 
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(widget.title),
+        title: const Text('Neyi Meşhur', style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        elevation: 0,
       ),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => KayitSayfasi()),
-              );
-            },
-            child: Text(
-              'KAYIT OL',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w700),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GirisSayfasi()),
-              );
-            },
-            child: Text(
-              'GİRİŞ YAP',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w700),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SifremiUnuttum()),
-              );
-            },
-            child: Text(
-              'ŞİFREMİ UNUTTUM',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w700),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Rotam()),
-              );
-            },
-            child: Text(
-              'ROTA',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w700),
-            ),
-          ),
-        ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomButton(text: 'KAYIT OL', routeName: '/kayit'),
+            CustomButton(text: 'GİRİŞ YAP', routeName: '/giris'),
+            CustomButton(
+                text: 'ŞİFREMİ UNUTTUM', routeName: '/sifremi-unuttum'),
+            CustomButton(text: 'ROTA', routeName: '/rota'),
+            CustomButton(text: 'ANA SAYFA', routeName: '/ana'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final String text;
+  final String routeName;
+
+  const CustomButton({Key? key, required this.text, required this.routeName})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        Navigator.pushNamed(context, routeName);
+      },
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.black,
+          fontSize: 24.0,
+          fontWeight: FontWeight.w700,
+        ),
       ),
     );
   }

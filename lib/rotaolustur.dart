@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:neyimeshur/gezinme.dart';
 import 'package:neyimeshur/harita.dart';
 import 'package:uuid/uuid.dart';
 import 'package:neyimeshur/class/rota_bloc.dart';
@@ -211,7 +212,7 @@ class _createNewTripState extends State<rotaOlustur> {
                     colorScheme: const ColorScheme.light(
                       primary: Color.fromARGB(255, 0, 0, 0),
                       onPrimary: Color.fromARGB(255, 255, 255, 255),
-                      onSurface: Colors.blueAccent,
+                      onSurface: Color.fromARGB(255, 10, 145, 198),
                     ),
                   ),
                   child: child!,
@@ -662,7 +663,17 @@ class _createNewTripState extends State<rotaOlustur> {
                                             height: 45,
                                             child: TextButton(
                                               onPressed: () async {
-                                                await createTrip();
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Gezinme(
+                                                            isBackButtonClick:
+                                                                true,
+                                                            autoSelectedIndex:
+                                                                2,
+                                                          )),
+                                                );
                                               },
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor: Color.fromARGB(
