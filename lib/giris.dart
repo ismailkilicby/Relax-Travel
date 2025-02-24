@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:neyimeshur/main.dart';
+import 'package:neyimeshur/gezinme.dart';
 import 'package:neyimeshur/sifremiunuttum.dart';
 
 final _emailcont = TextEditingController();
@@ -141,6 +141,29 @@ class GirisSayfasi extends StatelessWidget {
                     )
                   ],
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Gezinme(
+                                isBackButtonClick: false, autoSelectedIndex: 0),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'MİSAFİR?',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),
@@ -168,7 +191,10 @@ class GirisSayfasi extends StatelessWidget {
         );
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MyApp()),
+          MaterialPageRoute(
+            builder: (context) =>
+                Gezinme(isBackButtonClick: false, autoSelectedIndex: 0),
+          ),
         );
       } else {
         await _auth.signOut();

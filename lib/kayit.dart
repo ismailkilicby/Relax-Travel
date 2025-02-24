@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neyimeshur/giris.dart';
 import 'package:neyimeshur/kullanici_service.dart';
 import 'package:neyimeshur/kullanici_model.dart';
 
@@ -216,6 +217,27 @@ class KayitSayfasi extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GirisSayfasi()),
+                        );
+                      },
+                      child: Text(
+                        'Hesabın var mı?',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    )
+                  ],
                 ),
               ],
             ),

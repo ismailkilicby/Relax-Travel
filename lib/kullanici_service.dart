@@ -6,6 +6,8 @@ class UserService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  static var onAuthStateChanged;
+
   Future createUser(Users user) async {
     try {
       UserCredential userCredential =

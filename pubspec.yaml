@@ -21,6 +21,9 @@ dependencies:
   flutter_map: ^8.0.0
   latlong2: ^0.9.1
   shared_preferences: ^2.5.2
+  flutter_rating_bar: ^4.0.1
+  syncfusion_flutter_maps: ^28.2.6
+  firebase_database: ^11.3.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

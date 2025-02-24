@@ -4,8 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:neyimeshur/bar.dart';
 import 'package:neyimeshur/hesabim.dart';
 import 'package:neyimeshur/main.dart';
+import 'package:neyimeshur/myFavorite.dart';
 import 'package:neyimeshur/rota.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:neyimeshur/search.dart';
 
 // ignore: must_be_immutable
 class Gezinme extends StatefulWidget {
@@ -39,10 +41,14 @@ class _navigationPageState extends State<Gezinme> {
       isBackButtonClick = true;
 
       _pages = [
-        MyApp(),
+        MyHomePage(),
+        const search(
+          isTextFieldClicked: false,
+          searchType: 'city',
+          isSelectPlaces: false,
+        ),
         Rotam(),
-        Rotam(),
-        Rotam(),
+        myFavorite(),
         ProfilePage(),
       ];
     });
@@ -57,10 +63,14 @@ class _navigationPageState extends State<Gezinme> {
       _selectedIndex = _selectedIndex;
       var keyboardVisibilityController = KeyboardVisibilityController();
       _pages = [
-        MyApp(),
+        MyHomePage(),
+        const search(
+          isTextFieldClicked: false,
+          searchType: 'city',
+          isSelectPlaces: false,
+        ),
         Rotam(),
-        Rotam(),
-        Rotam(),
+        myFavorite(),
         ProfilePage(),
       ];
       keyboardSubscription =
@@ -74,10 +84,14 @@ class _navigationPageState extends State<Gezinme> {
 
       var keyboardVisibilityController = KeyboardVisibilityController();
       _pages = [
-        MyApp(),
+        MyHomePage(),
+        const search(
+          isTextFieldClicked: false,
+          searchType: 'city',
+          isSelectPlaces: false,
+        ),
         Rotam(),
-        Rotam(),
-        Rotam(),
+        myFavorite(),
         ProfilePage(),
       ];
       keyboardSubscription =
